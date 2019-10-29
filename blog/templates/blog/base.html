@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Django Boi Madhav</title>
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+    <div class="section over-hide">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-title-wrap text-center parallax-fade-top">
+                    <marquee><p>👨‍💻 Madhav Learning Django! 👨‍💻</p></marquee>
+                    <h1>First Blog using Django</h1>
+                </div>
+            </div>	
+        </div>
+    </div>
+    <div class="section over-hide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-3">
+                        {% block content %}
+                        <div class="blog-post-box">
+                            <h4><a class="text">{{ post.title|linebreaksbr }}</a></h4><br>
+                            <h5>{{ post.text|linebreaksbr }}</h5>
+                            <p class="mb-0 mt-3">{{ post.created_data }}</p>
+                        </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</body>
+<footer>
+    <centre><h3 class="primary-color">
+Made with <i class="icon ion-heart"></i> in India.</h3>
+    </centre>
+</footer>
+<link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+
+</html>
